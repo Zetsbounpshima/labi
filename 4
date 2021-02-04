@@ -1,0 +1,132 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+unsigned dlina(char* str) {
+	unsigned L = 0;
+
+	while (str[L])
+		L++;
+	return L;
+}
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int key = 0;
+	int flag = 1;
+	char st1[50];
+	char* p = st1;
+	cin.getline(p, 50);
+	char st2[50];
+	char* d = st2;
+	cin.getline(d, 50);
+	system("cls");
+	cout << "1) изменение 1-ой строки" << "  <-\n";
+	cout << "2) Копирование строки в строку\n";
+	cout << "3) Перезапись второй строки в первую\n";
+	cout << "4) Удаление 1-ой строки\n";
+	cout << "5) Сравнивание строк\n";
+	do {
+		key = _getch();
+		if (key == 224)
+		{
+			key = _getch();
+			if (flag > 5) flag = 5;
+			if (flag < 1) flag = 1;
+			if (key == 80) flag++;
+			if (key == 72) flag--;
+		}
+		switch (flag) {
+		case 1:
+			system("cls");
+			cout << "1) изменение 1-ой строки" << "  <-\n";
+			cout << "2) Копирование строки в строку\n";
+			cout << "3) Перезапись второй строки в первую\n";
+			cout << "4) Удаление 1-ой строки\n";
+			cout << "5) Сравнивание строк\n";
+			break;
+		case 2:
+			system("cls");
+			cout << "1) изменение 1-ой строки\n";
+			cout << "2) Копирование строки в строку" << " <-\n";
+			cout << "3) Перезапись второй строки в первую\n";
+			cout << "4) Удаление 1-ой строки\n";
+			cout << "5) Сравнивание строк\n";
+			break;
+		case 3:
+			system("cls");
+			cout << "1) изменение 1-ой строки\n";
+			cout << "2) Копирование строки в строку\n";
+			cout << "3) Перезапись второй строки в первую" << "  <-\n";
+			cout << "4) Удаление 1-ой строки\n";
+			cout << "5) Сравнивание строк\n";
+			break;
+		case 4:
+			system("cls");
+			cout << "1) изменение 1-ой строки\n";
+			cout << "2) Копирование строки в строку\n";
+			cout << "3) Перезапись второй строки в первую\n";
+			cout << "4) Удаление 1-ой строки" << "  <-\n";
+			cout << "5) Сравнивание строк\n";
+			break;
+		case 5:
+			system("cls");
+			cout << "1) изменение 1-ой строки\n";
+			cout << "2) Копирование строки в строку\n";
+			cout << "3) Перезапись второй строки в первую\n";
+			cout << "4) Удаление 1-ой строки\n";
+			cout << "5) Сравнивание строк" << "  <-\n";
+			break;
+
+		}
+	} while (key != 13 && key != 49 && key != 50 && key != 51 && key != 52 && key != 53 && key != 27);
+	switch (key) {
+	case 49: flag = 1;
+		break;
+	case 50: flag = 2;
+		break;
+	case 51: flag = 3;
+		break;
+	case 52: flag = 4;
+		break;
+	case 53: flag = 5;
+		break;
+	case 27: return 0;
+		break;
+	}
+	unsigned j;
+	switch (flag) {
+	case 1: ;
+		cin.getline(p, 50);
+		cout << "Первая строка: " << p;
+		break;
+	case 2:
+	 j = dlina(st1);
+
+		for (unsigned i = 0; st2[i]; ++i, ++j)
+
+			st1[j] = st2[i];
+
+		st1[++j] = '\0';
+			cout << p;
+		break;
+	case 3:
+		for (unsigned i = 0; st2[i]; ++i)
+
+			st1[i] = st2[i];
+
+		cout << p;
+		break;
+	case 4:
+		cin.getline(p, 0);
+		cout << p;
+		break;
+	case 5:
+		if (*p == *d)//5
+			cout << "Строки равны";
+		else
+			cout << "Строки не равны";
+		break;
+	}
+
+}
