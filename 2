@@ -1,0 +1,153 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int key = 0;
+	int flag = 1;
+	float a, b;
+	cout << "Введите первое число ";
+	cin >> a;
+	system("cls");
+	cout << "Введите второе число ";
+	cin >> b;
+	system("cls");
+	cout << "1) Операция сложения" << "  <-\n";
+	cout << "2) Операция вычитание\n";
+	cout << "3) Операция умножения\n";
+	cout << "4) операция деления\n";
+	cout << "5) ввод первогыо числа\n";
+	cout << "6) ввод второго числа\n";
+	cout << "7) выход";
+	do {
+		key = _getch();
+		if (key == 224)
+		{
+			key = _getch();
+			if (flag > 7) flag = 7;
+			if (flag < 1) flag = 1;
+			if (key == 80) flag++;
+			if (key == 72) flag--;
+		}
+		switch (flag) {
+		case 1:
+			system("cls");
+			cout << "1) Операция сложения" << "  <-\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход";
+			break;
+		case 2:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание" << "  <-\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход";
+			break;
+		case 3:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения" << "  <-\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход";
+			break;
+		case 4:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления" << "  <-\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход";
+			break;
+		case 5:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа" << "  <-\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход";
+			break;
+		case 6:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа" << "  <-\n";
+			cout << "7) выход";
+			break;
+		case 7:
+			system("cls");
+			cout << "1) Операция сложения\n";
+			cout << "2) Операция вычитание\n";
+			cout << "3) Операция умножения\n";
+			cout << "4) операция деления\n";
+			cout << "5) ввод первого числа\n";
+			cout << "6) ввод второго числа\n";
+			cout << "7) выход" << "  <-\n";
+			break;
+		}
+	} while (key != 13 && key != 49 && key != 50 && key != 51 && key != 52 && key != 53 && key != 54 && key != 55);
+	switch (key) {
+	case 49: flag = 1;
+		break;
+	case 50: flag = 2;
+		break;
+	case 51: flag = 3;
+		break;
+	case 52: flag = 4;
+		break;
+	case 53: flag = 5;
+		break;
+	case 54: flag = 6;
+		break;
+	case 55: flag = 7;
+		break;
+
+	}
+	float o;
+	system("cls");
+	if (flag == 1) {
+		o = a + b;
+		cout << "a + b = " << o;
+	}
+	if (flag == 2) {
+		o = a - b;
+		cout << "a - b = " << o;
+	}
+	if (flag == 3) {
+		o = a * b;
+		cout << "a * b = " << o;
+	}
+	if (flag == 4){
+		o = a / b;
+	cout << "a / b = " << o;
+}
+	if (flag == 5) {
+		cout << "Введите число ";
+		cin >> a;
+		cout << "a = " << a;
+	}
+	if (flag == 6) {
+		cout << "Введите число ";
+		cin >> b;
+		cout << "b = " << b;
+	}
+	if (flag == 7)
+	return flag;
+}
