@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int a;
+	cout << "Введите действиe: 1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление\n";
+	cin >> a;
+	cout << "Введите a, b\n";
+	float  b, v, d;
+	cin >> b >> v;
+	if (a == 1) {
+		d = b + v;
+		cout << "a + b = " << d;
+	}
+	else if (a == 2)
+	{
+		d = b - v;
+		cout << "a - b = " << d;
+	}
+	else if (a == 3)
+	{
+		d = b * v;
+		cout << "a * b = " << d;
+	}
+	else if (a == 4)
+	{
+		d = b / v;
+		cout << "a / b = " << d;
+	}
+	else
+		cout << "Вы выбрали неверное действие";
+	return 0;
+}
